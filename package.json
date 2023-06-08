@@ -1,0 +1,30 @@
+{
+  "name": "kriegerdigital",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./e2e/tests/login.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunandajakeral/kriegerdigital.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunandajakeral/kriegerdigital/issues"
+  },
+  "homepage": "https://github.com/sunandajakeral/kriegerdigital#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/register": "^7.22.5",
+    "chai": "^4.3.7",
+    "chromium": "^3.0.3",
+    "dotenv": "^16.1.4",
+    "mocha": "^10.2.0",
+    "puppeteer": "^20.5.0"
+  }
+}
