@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./e2e/tests/login.test.js"
+    "test": "mocha e2e/tests/*.test.js --timeout 5000"
   },
   "repository": {
     "type": "git",
