@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import * as data from "../testData";
+import * as data from "@e2e/testData";
 import { launchBrowser } from "e2e/utils/testUtils";
 import LoginPage from "@e2e/pages/LoginPage";
 import HomePage from "@e2e/pages/HomePage";
