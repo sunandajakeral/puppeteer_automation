@@ -41,7 +41,7 @@ describe("Register a New user", function () {
 
       // Enter the details on registration page
       await registrationPage.waitForRegisterPageToLoad();
-      await registrationPage.selectSalutation("Frau");
+      await registrationPage.selectSalutation(data.SALUTATION);
       await registrationPage.enterFirstName(data.FIRST_NAME);
       await registrationPage.enterLastName(data.LAST_NAME);
       await registrationPage.enterEmail(data.EMAIL);
