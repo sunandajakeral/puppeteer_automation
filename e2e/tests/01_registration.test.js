@@ -25,15 +25,15 @@ describe("Register a New user", function () {
   it("registers a new user with valid details", async function () {
     try {
       // Navigate to the login page
-      await loginPage.navigateToLoginPage(appUrl);
+      await homePage.navigateToLoginPage(appUrl);
 
-      await loginPage.isHomePageDisplayed();
+      await homePage.isHomePageDisplayed();
 
       // Accepts the cookies if the window exists
-      await loginPage.acceptAllCookies();
+      await homePage.acceptAllCookies();
 
       // click login link
-      await loginPage.clickLoginLink();
+      await homePage.clickLoginLink();
       await loginPage.waitForLoginForm();
 
       // click joinNow button
