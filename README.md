@@ -2,8 +2,7 @@
 The digital transformation demands viable, accessible solutions that suit everyone, even in the furniture trade: From the client to the employee to the company as a whole. 
 
 ## Version 1.0
-## Added
-- Added the Test 'logs in to moebel-kraft.com with valid credentials' 
+## Added 
 
 ## Installation
 
