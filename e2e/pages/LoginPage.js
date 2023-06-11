@@ -1,4 +1,5 @@
 import * as locators from "../locators";
+import { expect } from "chai";
 
 export default class LoginPage {
   constructor(page) {
@@ -27,4 +28,19 @@ export default class LoginPage {
     await this.page.click(locators.joinNowButton);
   }
 
+  async validateLoginEmailError(errorMessage) {   
+    await this.page.waitForSelector(locators.loginEmailError); 
+    const text = await this.page.$eval(locators.loginEmailError, (element) => {
+      return element.textContent;
+    });
+    expect(text).to.equal(errorMessage);
+  }
+
+  async validatePasswordError(passwordError) {   
+    await this.page.waitForSelector(locators.passwordError); 
+    const text = await this.page.$eval(locators.passwordError, (element) => {
+      return element.textContent;
+    });
+    expect(text).to.equal(passwordError);
+  }
 }
