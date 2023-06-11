@@ -41,4 +41,21 @@ export default class LoginPage {
     const element = await this.page.$(locators.customerAccountLink);
     expect(element).to.exist;
   }
+
+  async selectProductCategoryMoebel() {
+    await this.page.waitForSelector(locators.moebelLink, {
+      visible: true,
+      clickable: true,
+    });
+    await this.page.click(locators.moebelLink);
+  }
+
+  async selectSubCategoryEckSofas() {
+    await this.page.waitForSelector(locators.eckSofasLink, {
+      visible: true,
+      clickable: true,
+    });
+
+    await this.page.click(locators.eckSofasLink);
+  }
 }
