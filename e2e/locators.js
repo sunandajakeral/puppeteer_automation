@@ -7,6 +7,8 @@ export const loginForm = "#login-form";
 export const loginEmailInput = "#loginEmail";
 export const loginPasswordInput = "#loginPassword";
 export const loginButton = "#login-submit";
+export const loginEmailError = "#loginEmail-error";
+export const passwordError = "#loginPassword-error";
 
 // Register a new user
 export const joinNowButton = '[data-testid="registerAccount"]';
