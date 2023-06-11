@@ -102,4 +102,31 @@ describe("Login to the application", function () {
       console.error("An error occurred:", error);
     }
   });
+
+  it("tries to login with the valid emailid without customer account", async function () {
+    try {
+      // Navigate to the login page
+      await homePage.navigateToLoginPage(appUrl);
+
+      await homePage.isHomePageDisplayed();
+
+      // Accepts the cookies if the window exists
+      await homePage.acceptAllCookies();
+
+      // click login link
+      await homePage.clickLoginLink();
+
+      // enter credentials
+      await loginPage.enterCredentials("name@gmail.com", data.PASSWORD);
+
+      // Click the login button
+      await loginPage.clickLoginButton();
+
+      // validate the login errors
+      await loginPage.validateLoginEmailError(data.LOGIN_WITHOUT_ACCOUNT_ERROR);
+
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  });
 });
