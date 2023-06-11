@@ -4,6 +4,11 @@ The digital transformation demands viable, accessible solutions that suit everyo
 ## Version 1.0
 ## Added
 - Added the test "registers a new user with valid details" for Registration functionality
+- Added tests: 
+    - logs in to moebel-kraft.com with valid credentials
+    - tries to login with empty credentials
+    - tries to login with invalid username
+    - tries to login with the valid emailid without customer account
 
 ## Installation
 
