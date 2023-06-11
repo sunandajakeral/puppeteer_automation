@@ -26,6 +26,11 @@
     "chromium": "^3.0.3",
     "dotenv": "^16.1.4",
     "mocha": "^10.2.0",
-    "puppeteer": "^20.5.0"
+    "puppeteer": "^20.5.0",
+    "sql-cli": "^0.6.2",
+    "sql-cli-repl": "^2.0.0"
+  },
+  "dependencies": {
+    "mssql": "^3.3.0"
   }
 }
