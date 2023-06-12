@@ -25,7 +25,7 @@ describe("Pet Store API Tests", function () {
   });
 
   after(async function () {
-    // await browser.close();
+    await browser.close();
   });
 
   it("adds a new pet to the store successfully", async function () {
@@ -59,6 +59,30 @@ describe("Pet Store API Tests", function () {
     }
   });
 
+  it("fetches pet details by id", async function () {
+    try {
+      await page.setRequestInterception(true);
+
+      page.once("request", (interceptedRequest) => {
+        interceptedRequest.continue();
+      });
+
+      response = await page.goto(`${apiUrl}/${petId}`);
+      responseBody = await response.text();
+      statusCode = response.status();
+
+      jsonData = await parser.parseStringPromise(responseBody);
+      retrivedPetId = jsonData.Pet.id[0];
+      petName = jsonData.Pet.name[0];
+
+      expect(statusCode).to.equal(200);
+      expect(retrivedPetId).to.equal(petId);
+      expect(petName).to.equal(data.requestBody.name);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  });
+
   it("tries to add a new pet to the store with empty requestbody", async function () {
     try {
       await page.setRequestInterception(true);
@@ -82,30 +106,6 @@ describe("Pet Store API Tests", function () {
 
       // status code is 200 because there is no validation at client side
       expect(statusCode).to.equal(200);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  });
-
-  it("fetches pet details by id", async function () {
-    try {
-      await page.setRequestInterception(true);
-
-      page.once("request", (interceptedRequest) => {
-        interceptedRequest.continue();
-      });
-
-      response = await page.goto(`${apiUrl}/${petId}`);
-      responseBody = await response.text();
-      statusCode = response.status();
-
-      jsonData = await parser.parseStringPromise(responseBody);
-      retrivedPetId = jsonData.Pet.id[0];
-      petName = jsonData.Pet.name[0];
-
-      expect(statusCode).to.equal(200);
-      expect(retrivedPetId).to.equal(petId);
-      expect(petName).to.equal(data.requestBody.name);
     } catch (error) {
       console.error("Error:", error);
     }
