@@ -110,4 +110,28 @@ describe("Pet Store API Tests", function () {
       console.error("Error:", error);
     }
   });
+
+  it("fetches pet details by invalid id", async function () {
+    try {
+      const invalidPetId = "12345678";
+      await page.setRequestInterception(true);
+
+      page.once("request", (interceptedRequest) => {
+        interceptedRequest.continue();
+      });
+
+      response = await page.goto(`${apiUrl}/${invalidPetId}`);
+      responseBody = await response.text();
+      statusCode = response.status();
+
+      jsonData = await parser.parseStringPromise(responseBody);
+      message = jsonData.apiResponse.message[0];
+
+      expect(statusCode).to.equal(404);
+      expect(message).to.equal("Pet not found");
+
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  });
 });
