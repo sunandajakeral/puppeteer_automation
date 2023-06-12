@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   sql-server:
     image: mcr.microsoft.com/mssql/server
@@ -7,7 +7,12 @@ services:
       - SA_PASSWORD=YourPassword123
     ports:
       - "1433:1433"
+  e2e:
+    build:
+      context: .
+      dockerfile: DockerFile
+    ports:
+      - 3000:3000
     volumes:
-      - ./sql-scripts:/docker-entrypoint-initdb.d
-
-    
+      - .:/app
+    command: npm test

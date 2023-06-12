@@ -1,0 +1,14 @@
+# Use an official Node.js runtime as the base image
+FROM node:16.4.2-alpine3.14
+
+# Set the working directory inside the container
+WORKDIR /app
+
+COPY package.json ./
+COPY e2e ./
+
+# Install project dependencies
+RUN npm install
+
+# Set the command to run tests
+CMD ["npm", "test"]
