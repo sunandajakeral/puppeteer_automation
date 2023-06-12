@@ -134,4 +134,25 @@ describe("Pet Store API Tests", function () {
       console.error("Error:", error);
     }
   });
+
+  it("fetches pet details by empty id", async function () {
+    try {
+      const invalidPetId = "";
+      await page.setRequestInterception(true);
+
+      page.once("request", (interceptedRequest) => {
+        interceptedRequest.continue();
+      });
+
+      response = await page.goto(`${apiUrl}/${invalidPetId}`);
+      responseBody = await response.text();
+      statusCode = response.status();
+      jsonData = await parser.parseStringPromise(responseBody);
+
+      expect(statusCode).to.equal(405);
+
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  });
 });
