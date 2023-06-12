@@ -10,3 +10,24 @@ export const LOGIN_INVALID_EMAIL_ERROR =
 export const LOGIN_WITH_EMPTY_EMAIL_ERROR = "Bitte geben Sie Ihre E-Mail-Adresse ein";
 export const PASSWORD_ERROR =
   "Bitte verwenden Sie ein Passwort von mindestes 8 Zeichen mit mindestens einem Kleinbuchstaben, einem Großbuchstaben, einer Zahl und einem Sonderzeichen.";
+
+// API test data
+export const requestBody = {
+  id: 0,
+  category: {
+    id: 0,
+    name: "animals",
+  },
+  name: "doggie",
+  photoUrls: ["https://example.com"],
+  tags: [
+    {
+      id: 0,
+      name: "mypet",
+    },
+  ],
+  status: "available",
+};
+
+export const emptyRequestBody = {};
+
