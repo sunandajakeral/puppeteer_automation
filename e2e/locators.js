@@ -21,3 +21,17 @@ export const repeatPasswordInput = '#password2';
 export const registerForm = '#register-form';
 export const registerButton = '#register-submit';
 export const termsConditionsButton = '[data-testid="nullLabel"]';
+
+// Shopping
+export const moebelLink = 'a[href="/moebel"]';
+export const eckSofasLink = 'a[href="/ecksofas"]';
+export const eckSofasHeader = 'h1:contains("Ecksofas")';
+export const addToWishlist = 'div[data-testid="wishlistHeart"]';
+export const wishListLink = 'a[href="/wunschliste"]';
+export const totalProductsInWishList = '//a[@href="/wunschliste"]/span[2]';
+export const addAllToCartButton = '#addAddToWishlist';
+export const zipcodeInput = '#zipcode-logistic-input';
+export const addedToCartMessage = 'div:contains("In den Warenkorb gelegt!")';
+export const toTheCartButton = 'button[data-testid="cartOverlayToCartButton"]';
+export const cartLink = 'a[href="/warenkorb"]';
+export const totalProductsInCartXpath = '//a[@href="/warenkorb"]/span[2]';
