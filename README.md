@@ -52,8 +52,11 @@ run sql script
 
 ## Usage
 
-1. Run the tests using the command `npm test`
-2. Write a query that selects the item name and the name of its seller for each item that
+1. Add valid user details to the USERNAME and PASSWORD in .env file
+2. Run the tests using the command `npm test`
+
+## DB Query
+- Write a query that selects the item name and the name of its seller for each item that
    belongs to a seller with a rating greater than 4. The query should return the name of the
    item as the first column and name of the seller as the second column.
 
