@@ -19,6 +19,11 @@ describe("Shopping scenario", function () {
     homePage = new HomePage(page);
     categoryPage = new CategoryPage(page);
     wishlistPage = new WishlistPage(page);
+    await page.setViewport({
+      width: 1200, 
+      height: 3072, 
+      deviceScaleFactor: 1,
+    });
   });
 
   after(async function () {
@@ -27,12 +32,6 @@ describe("Shopping scenario", function () {
 
   it("adds Products to the Shopping Cart successfully", async function () {
     try {
-      await page.setViewport({
-        width: 1200, 
-        height: 3072, 
-        deviceScaleFactor: 1,
-      });
-
       // Navigate to the login page
       await homePage.navigateToLoginPage(appUrl);
 

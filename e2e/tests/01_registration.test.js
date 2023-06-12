@@ -16,6 +16,11 @@ describe("Register a New user", function () {
     loginPage = new LoginPage(page);
     registrationPage = new RegistrationPage(page);
     homePage = new HomePage(page);
+    await page.setViewport({
+      width: 1200, 
+      height: 3072, 
+      deviceScaleFactor: 1,
+    });
   });
 
   after(async function () {

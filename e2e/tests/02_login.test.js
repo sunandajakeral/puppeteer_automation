@@ -14,6 +14,11 @@ describe("Login to the application", function () {
     [browser, page] = await launchBrowser();
     loginPage = new LoginPage(page);
     homePage = new HomePage(page);
+    await page.setViewport({
+      width: 1200, 
+      height: 3072, 
+      deviceScaleFactor: 1,
+    });
   });
 
   after(async function () {
