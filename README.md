@@ -1,4 +1,4 @@
-# kriegerdigital
+# puppeteer_automation
 
 The digital transformation demands viable, accessible solutions that suit everyone, even in the furniture trade: From the client to the employee to the company as a whole.
 
